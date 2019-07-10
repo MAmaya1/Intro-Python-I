@@ -22,3 +22,16 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+def print_calendar(*args):
+  for arg in args:
+    if len(arg) == 1:
+      print(calendar.month(2019, 7))
+    elif len(arg) == 2:
+      print(calendar.month(2019, int(arg.pop())))
+    elif len(arg) == 3:
+      print(calendar.month(int(arg.pop()), int(arg[-1])))
+    else:
+      print("Please enter date as `14_cal.py month [year]`")
+
+print_calendar(sys.argv)
